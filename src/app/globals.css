@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* Конструктивистский плакат: вермильон, газетная бумага, чёрная краска. Только плоские поля. */
+:root {
+  --red: #c42b1c;
+  --paper: #ebe4d2;
+  --ink: #121110;
+  --cream: #f3eddf;
+  --ink-soft: #4a453c;
+  --cream-soft: #c4bcaa;
+}
+
+@theme inline {
+  --color-red: var(--red);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream-soft: var(--cream-soft);
+  --color-hot: #ff6b5a; /* вермильон для текста на чёрном */
+  --font-display: var(--font-fira), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-golos), -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  background: var(--ink);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Системные детали окрашены под мир страницы */
+::selection {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+* {
+  scrollbar-color: var(--ink) var(--paper);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+}
+
+.poster {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Единственный авторский момент: чёрная диагональ въезжает, диск оседает */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes band-in {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  @keyframes disc-in {
+    from {
+      transform: scale(0.88);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .anim-band {
+    animation: band-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+  }
+  .anim-disc {
+    animation: disc-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
