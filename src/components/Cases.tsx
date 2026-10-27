@@ -11,7 +11,7 @@ const SHAPES: Record<string, ShapeKind> = {
 
 export default function Cases({ cases }: { cases: Content['cases'] }) {
     return (
-        <section id="cases" className="bg-ink py-20 text-cream lg:py-28">
+        <section id="cases" className="bg-ink py-14 text-cream lg:py-28">
             <div className="mx-auto max-w-7xl px-5 lg:px-10">
                 <h2 className="poster max-w-4xl text-[clamp(2.25rem,5.6vw,4.5rem)] text-balance">{cases.title}</h2>
                 <p className="mt-5 max-w-2xl text-lg text-cream-soft">{cases.subtitle}</p>
@@ -20,7 +20,7 @@ export default function Cases({ cases }: { cases: Content['cases'] }) {
                     {cases.items.map((c) => (
                         <article key={c.id} className="border-t-[6px] border-red py-10 lg:py-14">
                             <div className="flex items-end justify-between gap-6">
-                                <h3 className="poster text-[clamp(2.75rem,8vw,6rem)]">{c.title}</h3>
+                                <h3 className="poster break-words text-[clamp(2rem,9vw,6rem)]">{c.title}</h3>
                                 <Shape
                                     kind={SHAPES[c.id] ?? 'square'}
                                     className="mb-2 h-12 w-12 shrink-0 text-red lg:h-20 lg:w-20"
@@ -33,7 +33,7 @@ export default function Cases({ cases }: { cases: Content['cases'] }) {
                                     <ul className="space-y-4">
                                         {c.metrics.map((m) => (
                                             <li key={m.label} className="flex items-baseline gap-4">
-                                                <span className="poster tabular text-4xl tracking-normal text-hot">
+                                                <span className="poster tabular text-3xl tracking-normal text-hot sm:text-4xl">
                                                     {m.value}
                                                 </span>
                                                 <span className="text-base text-cream">{m.label}</span>

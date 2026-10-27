@@ -7,7 +7,7 @@ export default function Faq({ faq }: { faq: Content['faq'] }) {
     const [openIdx, setOpenIdx] = useState<number | null>(0);
 
     return (
-        <section id="faq" className="bg-paper pb-20 lg:pb-28">
+        <section id="faq" className="bg-paper pb-14 lg:pb-28">
             <div className="mx-auto max-w-7xl px-5 lg:px-10">
                 <div className="grid gap-10 border-t-[6px] border-ink pt-16 lg:grid-cols-12 lg:gap-8 lg:pt-24">
                     <h2 className="poster text-[clamp(2.25rem,5.6vw,4.5rem)] lg:col-span-4">{faq.title}</h2>

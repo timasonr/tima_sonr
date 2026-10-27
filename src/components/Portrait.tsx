@@ -14,14 +14,14 @@ export default function Portrait({ alt }: { alt: string }) {
     const file = CANDIDATES.find((f) => fs.existsSync(path.join(process.cwd(), 'public', f)));
 
     return (
-        <div className="anim-disc relative mx-auto aspect-square w-full max-w-[26rem] overflow-hidden rounded-full bg-ink">
+        <div className="anim-disc relative mx-auto aspect-square w-full overflow-hidden rounded-full bg-ink lg:max-w-[26rem]">
             {file ? (
                 <Image
                     src={`${BASE_PATH}/${file}`}
                     alt={alt}
                     fill
                     priority
-                    sizes="(min-width: 1024px) 26rem, 80vw"
+                    sizes="(min-width: 1024px) 26rem, (min-width: 640px) 18rem, 14rem"
                     className="rounded-full object-cover object-[center_12%]"
                 />
             ) : (

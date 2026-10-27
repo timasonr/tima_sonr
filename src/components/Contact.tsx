@@ -11,7 +11,7 @@ export default function Contact({
 }) {
     return (
         <>
-            <section id="contact" className="bg-ink pt-20 text-cream lg:pt-28">
+            <section id="contact" className="bg-ink pt-14 text-cream lg:pt-28">
                 <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 lg:grid-cols-12 lg:gap-8 lg:px-10 lg:pb-28">
                     <div className="lg:col-span-7">
                         <h2 className="poster text-[clamp(2.75rem,8.4vw,6rem)] text-balance">{contact.title}</h2>
@@ -27,16 +27,16 @@ export default function Contact({
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-6 lg:col-span-5 lg:justify-self-end">
+                    <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:col-span-5 lg:w-auto lg:justify-self-end">
                         <a
                             href={CONTACTS.telegram}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group poster flex aspect-square w-44 flex-col items-center justify-center gap-2 rounded-full bg-red p-5 text-center text-xl leading-none tracking-normal text-cream transition-transform duration-300 hover:-rotate-12 sm:w-52 sm:text-2xl"
+                            className="group poster flex w-full items-center justify-center gap-3 bg-red px-6 py-5 text-center text-xl leading-none tracking-normal text-cream transition-transform duration-300 hover:-rotate-2 sm:aspect-square sm:w-52 sm:flex-col sm:rounded-full sm:p-5 sm:text-2xl sm:hover:-rotate-12"
                         >
-                            <Send size={32} aria-hidden="true" />
+                            <Send size={28} aria-hidden="true" />
                             <span>{contact.telegram}</span>
-                            <span className="flex items-center gap-1 text-base">
+                            <span className="flex items-center gap-1 text-base font-bold normal-case tracking-normal">
                                 {CONTACTS.telegramHandle}
                                 <ArrowUpRight size={18} aria-hidden="true" />
                             </span>
@@ -45,9 +45,9 @@ export default function Contact({
                             href={CONTACTS.whatsapp}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group poster flex aspect-square w-44 flex-col items-center justify-center gap-2 rounded-full bg-cream p-5 text-center text-xl leading-none tracking-normal text-ink transition-transform duration-300 hover:-rotate-12 sm:w-52 sm:text-2xl"
+                            className="group poster flex w-full items-center justify-center gap-3 bg-cream px-6 py-5 text-center text-xl leading-none tracking-normal text-ink transition-transform duration-300 hover:-rotate-2 sm:aspect-square sm:w-52 sm:flex-col sm:rounded-full sm:p-5 sm:text-2xl sm:hover:-rotate-12"
                         >
-                            <WhatsAppIcon size={32} />
+                            <WhatsAppIcon size={28} />
                             <span>{contact.whatsapp}</span>
                             <span className="flex items-center gap-1 text-base">
                                 <ArrowUpRight size={18} aria-hidden="true" />

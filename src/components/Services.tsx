@@ -9,7 +9,7 @@ const SHAPES: Record<'sites' | 'mvp' | 'automation', { kind: ShapeKind; color: s
 
 export default function Services({ services }: { services: Content['services'] }) {
     return (
-        <section id="services" className="bg-paper py-20 lg:py-28">
+        <section id="services" className="bg-paper py-14 lg:py-28">
             <div className="mx-auto max-w-7xl px-5 lg:px-10">
                 <h2 className="poster max-w-4xl text-[clamp(2.25rem,5.6vw,4.5rem)] text-balance">{services.title}</h2>
                 <p className="mt-5 max-w-2xl text-lg text-ink-soft">{services.subtitle}</p>

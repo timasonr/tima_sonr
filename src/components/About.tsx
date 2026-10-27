@@ -3,7 +3,7 @@ import Shape from './Shape';
 
 export default function About({ about }: { about: Content['about'] }) {
     return (
-        <section id="about" aria-label={about.title} className="relative overflow-hidden bg-ink py-20 text-cream lg:py-28">
+        <section id="about" aria-label={about.title} className="relative overflow-hidden bg-ink py-14 text-cream lg:py-28">
             <Shape
                 kind="circle"
                 className="pointer-events-none absolute -bottom-24 -right-24 hidden h-64 w-64 text-red lg:block lg:-bottom-20 lg:-right-12 lg:h-96 lg:w-96"

@@ -19,7 +19,7 @@ export default function Header({ locale, nav }: { locale: Locale; nav: Content['
     return (
         <header className="fixed inset-x-0 top-0 z-50 bg-ink text-cream">
             <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-5 lg:px-10">
-                <a href="#top" className="poster flex items-center gap-2 text-xl tracking-normal">
+                <a href="#top" className="poster flex items-center gap-2 text-lg tracking-normal sm:text-xl">
                     <span className="inline-block h-4 w-4 bg-red" aria-hidden="true" />
                     TimaSonr
                 </a>
@@ -37,7 +37,7 @@ export default function Header({ locale, nav }: { locale: Locale; nav: Content['
                 </nav>
 
                 <div className="flex items-center gap-4">
-                    <div className="hidden items-center gap-3 text-sm font-semibold uppercase sm:flex">
+                    <div className="flex items-center gap-2.5 text-xs font-semibold uppercase sm:gap-3 sm:text-sm">
                         {locales.map((l) => (
                             <Link
                                 key={l}
